@@ -1,11 +1,18 @@
 
-class Maths {
+class MathsClass {
 
-    sum(result) {
+    constructor(json){
+        this.numbers = [];
+        this.obj = Object.values(json)
+        this.obj.forEach(element => {
+            this.numbers.push(element)
+        });
+    }
+
+    sum() {
 
         var sum = 0
-        let resultToArray = Object.values(result)
-        resultToArray.forEach(element => {
+        this.numbers.forEach(element => {
             // console.log(`${element} + ${sum} = ${element+sum}`)
             sum+=element
         });
@@ -13,20 +20,18 @@ class Maths {
         
     }
 
-    rest(result) {
+    rest() {
         var sum = 0
-        let resultToArray = Object.values(result)
-        resultToArray.forEach(element => {
+        this.numbers.forEach(element => {
             // console.log(`${element} - ${sum} = ${element-sum}`)
             sum-=element
         });
         return sum;
     }
 
-    multiply(result) {
+    multiply() {
         var sum = 1
-        let resultToArray = Object.values(result)
-        resultToArray.forEach(element => {
+        this.numbers.forEach(element => {
             // console.log(`${element} * ${sum} = ${element*sum}`)
             sum = sum * element
         });
@@ -34,4 +39,4 @@ class Maths {
     }
 }
 
-module.exports = Maths;
+module.exports = MathsClass;
